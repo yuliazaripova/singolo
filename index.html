@@ -6,18 +6,19 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Singolo</title>
     <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
-    <header class="header">
+    <header class="header" id="home">
         <div class="header__wrapper wrapper">
             <a href="#" class="logo"><h1>SINGOLO<span class="logo_colored">*</span></h1></a>
             <nav class="header__navigation">
                 <ul class="navigation">
-                    <li class="navigation__item"><a href="#" class="navigation__link">Home</a></li>
-                    <li class="navigation__item"><a href="#" class="navigation__link">Services</a></li>
-                    <li class="navigation__item"><a href="#" class="navigation__link">Portfolio</a></li>
-                    <li class="navigation__item"><a href="#" class="navigation__link">About</a></li>
-                    <li class="navigation__item"><a href="#" class="navigation__link">Contact</a></li>
+                    <li class="navigation__item"><a href="#home" class="navigation__link">Home</a></li>
+                    <li class="navigation__item"><a href="#services" class="navigation__link">Services</a></li>
+                    <li class="navigation__item"><a href="#portfolio" class="navigation__link">Portfolio</a></li>
+                    <li class="navigation__item"><a href="#about" class="navigation__link">About</a></li>
+                    <li class="navigation__item"><a href="#contact" class="navigation__link">Contact</a></li>
                 </ul>
             </nav>
         </div>
@@ -29,18 +30,27 @@
                 <a href="#"><span class="ico ico_right-arrow"></span></a>
             </div>
             <ul class="slider__list">
-                <li class="slider-item">
-                    <div class="slider__image slider__image-vertical">
-                        <img src="assets/img/iphone_vertical.png" alt="iphone_vertical">
-                    </div>
-                    <div class="slider__image slider__image-horizontal">
-                        <img src="assets/img/iphone_horizontal.png" alt="iphone_horizontal">
-                    </div>                   
+                <li class="slider-item" id="slide1">
+                    <figure>
+                        <div class="slider__image slider__image-vertical">
+                            <img class="phone" src="assets/img/phone/phone-vertical.svg" alt="iphone_vertical">
+                            <img class="phone-display phone-display-vertical" src="assets/img/phone/phone-vertical-display.png" alt="iphone_vertical">
+                            <img class="phone-shadow" src="assets/img/phone/phone-vertical-shadow.png" alt="iphone_vertical">
+                        </div>
+                        <div class="slider__image slider__image-horizontal">
+                            <img class="phone" src="assets/img/phone/phone-horizontal.svg" alt="iphone_horizontal">
+                            <img class="phone-display phone-display-horizontal" src="assets/img/phone/phone-horizontal-display.png" alt="iphone_horizontal">
+                            <img class="phone-shadow" src="assets/img/phone/phone-horizontal-shadow.png" alt="iphone_horizontal">
+                        </div>  
+                </figure>                 
+                </li>
+                <li class="slider-item" id="slide2">
+                    <img src="assets/img/slider.jpg" alt="slider">
                 </li>
             </ul>
         </div>
     </section>
-    <section class="services">
+    <section class="services" id="services">
         <div class="wrapper">
             <div class="services__content">
                 <h2 class="services__title">Our Services</h2>
@@ -116,7 +126,7 @@
             </div>
         </div>
     </section>
-    <section class="portfolio">
+    <section class="portfolio" id="portfolio">
         <div class="wrapper portfolio__wrapper">
             <h2 class="portfolio__title">Portfolio</h2>
             <p class="portfolio__subtitle">Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</p>
@@ -142,7 +152,7 @@
             </ul>
         </div>
     </section>
-    <section class="about-us">
+    <section class="about-us" id="about">
         <div class="wrapper">
             <h2 class="about-us__title">About Us</h2>
             <p class="about-us__subtitle">Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum. Duis mollis, non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
@@ -339,7 +349,7 @@
             </div>
         </div>
     </section> 
-    <section class="quote">
+    <section class="quote" id="contact">
         <div class="wrapper">
             <h2 class="quote__title">Get a Quote</h2>
             <p class="quote__subtitle">
@@ -347,11 +357,11 @@
             </p>
             <div class="quote__2-layout-column">
                 <form action="#">
-                    <input type="text" id="name" name="name" required placeholder="Name (Required)" pattern="[A-Za-z ]{3,20}"><br>
-                    <input type="email" id="email" name="email" required placeholder="Email (Required)"><br>
-                    <input type="text" id="subject" name="subject" placeholder="Subject"><br>
-                    <textarea name="question" placeholder="Describe your project in detail..."></textarea>
-                    <input type="submit" type="submit" value="Submit">
+                    <input class="form-item" type="text" id="name" name="name" required placeholder="Name (Required)"><br>
+                    <input class="form-item" type="email" id="email" name="email" required placeholder="Email (Required)" pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$"><br>
+                    <input class="form-item" type="text" id="subject" name="subject" placeholder="Subject"><br>
+                    <textarea class="form-item" name="question" id="description" placeholder="Describe your project in detail..."></textarea>
+                    <input class="submit" type="submit" type="submit" value="SEND" id="submit">
                 </form>
                 <div class="quote__contacts">
                     <h3 class="quote__contacts__title">Contact Information</h3>
@@ -434,5 +444,18 @@
         </div>
     </footer>     
 </div>
+<section>
+    <div class="modal">
+        <div class="modal__message">
+            <p class="modal__p">The letter was sent</p><br>
+            <p class="modal__subject modal__p"></p><br>
+            <p class="modal__description modal__p"></p><br>
+            <button class="submit modal__button">OK</button>
+        </div>  
+    </div>
+</section>
+<div class="fade">
+</div>
+
 </body>
 </html>
