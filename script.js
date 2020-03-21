@@ -1,86 +1,77 @@
+//navigation
 const NAV = document.querySelector('.navigation');
+
+document.addEventListener('scroll', onScroll);
+
+function onScroll(event) {
+    const curPos = window.scrollY;
+    const SECTIONS = document.querySelectorAll('body>section');
+    const LINKS = document.querySelectorAll('.navigation a');
+
+    SECTIONS.forEach((el) => {
+        console.log(el.getAttribute('id'));
+        el.getAttribute('id');
+
+        if (el.offsetTop <= curPos+89 && (el.offsetTop + el.offsetHeight) > curPos+89) {
+            LINKS.forEach((a) => {
+                a.classList.remove('active-nav');
+                if (el.getAttribute('id') === a.getAttribute('href').substring(1)) {
+                    a.classList.add('active-nav');
+                }
+            });
+        }
+    });
+}
+
+
+NAV.addEventListener('click', (event) =>{
+    NAV.querySelectorAll('a').forEach(el => el.classList.remove('active-nav'));
+    event.target.classList.add('active-nav');
+});
+
+//portfolio
 const PORTFOLIO = document.querySelector('.layout-4-column');
 const PORTFOLIO_TAGS = document.querySelector('.portfolio__tags');
 
-NAV.addEventListener('click', (event) =>{
-    NAV.querySelectorAll('a').forEach(el => el.classList.remove('active'));
-    event.target.classList.add('active');
+PORTFOLIO_TAGS.addEventListener('click', (event) =>{
+    PORTFOLIO_TAGS.querySelectorAll('span').forEach(el => el.classList.remove('tag_active'));
+    if (event.target.classList.contains('tag')) {
+        event.target.classList.add('tag_active');
+    }
+    
 });
 
-PORTFOLIO_TAGS.addEventListener('click', (event) =>{
-    PORTFOLIO_TAGS.querySelectorAll('span').forEach(el => el.classList.remove('portfolio__tags_active'));
-    event.target.classList.add('portfolio__tags_active');
-});
-function mixImg() {
-    let mixRand=(a,b)=>Math.random()-0.5;
-    let arrImg = Array.from(document.querySelectorAll('.layout-4-column-item__img'));
-    let arrImgSrcMix = arrImg.map(e=>e.src).sort(mixRand);
-    arrImg.map((e, i) => e.src = arrImgSrcMix[i]);
-    PORTFOLIO.querySelectorAll('img').forEach(el => el.classList.remove('portfolio-item_active'));
+function changeOrder() {
+    let imgs = document.querySelectorAll('.layout-4-column-item ');
+    imgs[imgs.length-1].after(imgs[0]);
 }
 
-PORTFOLIO_TAGS.addEventListener('click', mixImg);
+PORTFOLIO_TAGS.addEventListener('click', changeOrder);
 
 PORTFOLIO.addEventListener('click', (event) =>{
     PORTFOLIO.querySelectorAll('img').forEach(el => el.classList.remove('portfolio-item_active'));
-    event.target.classList.add('portfolio-item_active');
+    if (event.target.classList.contains('layout-4-column-item__img')) {
+        event.target.classList.add('portfolio-item_active');
+    } 
 });
 
 
 
 //slider
-let slides = document.querySelectorAll('.slider-item');
-let slider = [];
-for (let i=0; i<slides.length; i++) {
-    slider[i] = slides[i].innerHTML;
-    slides[i].remove();
-}
-
-let step = 0;
-let offset = 0;
-
-function draw() {
-    let slide = document.createElement('li');
-    slide.innerHTML = slider[step];
-    slide.classList.add('slider-item');
-    
-    document.querySelector('.slider__list').appendChild(slide);
-    if(step + 1 == slider.length){
-        step = 0;
-    } else {
-        step++;
-    }
-    
-    offset = 1;
-}
-draw();
-draw();
-
+let items = document.querySelectorAll('.slider-item');
+let currentItem = 0;
+let isEnabled = true;
 const sliderBG = document.querySelector('.slider');
+const arrows = document.querySelectorAll('.arrow');
 
-
-function left() {
-    let slides2 = document.querySelectorAll('.slider-item');
-    slides2[0].style.left = -offset*1020 + 'px';
-    
-    setTimeout(function(){
-        slides2[0].remove();
-        draw();
-        changeBg();
-        phoneOff();
-    },1000);
-}
-
-function right() {
-    let slides2 = document.querySelectorAll('.slider-item');
-    slides2[0].style.left = offset*1020 + 'px';
-    
-    setTimeout(function(){
-        slides2[0].remove();
-        draw();
-        changeBg();
-        phoneOff();
-    },1000);
+function changeArrows() {
+    arrows.forEach((ar) => {
+        if (ar.classList.contains('change-arrow')) {
+            ar.classList.remove('change-arrow');
+        } else {
+            ar.classList.add('change-arrow');
+        }
+    });
 }
 
 function changeBg() {
@@ -90,12 +81,56 @@ function changeBg() {
         sliderBG.classList.add('slider_changed');
     }
 }
-const LEFT = document.querySelector('.ico_left-arrow');
-const RIGHT = document.querySelector('.ico_right-arrow');
 
+function changeCurrentItem(n) {
+    currentItem = (n + items.length) % items.length;
+}
 
-LEFT.addEventListener('click', left);
-RIGHT.addEventListener('click', right);
+function hideItem(direction) {
+    isEnabled = false;
+    items[currentItem].classList.add(direction);
+    items[currentItem].addEventListener('animationend', function() {
+        this.classList.remove('active-slider', direction);
+    });
+}
+
+function showItem(direction) {
+    items[currentItem].classList.add('next', direction);
+    items[currentItem].addEventListener('animationend', function() {
+        this.classList.remove('next', direction);
+        this.classList.add('active-slider');
+        isEnabled = true;
+    });
+}
+
+function previousItem(n) {
+    hideItem('to-right');
+    changeCurrentItem(n - 1);
+    showItem('from-left');
+}
+
+function nextItem(n) {
+    hideItem('to-left');
+    changeCurrentItem(n + 1);
+    showItem('from-right');
+}
+
+document.querySelector('.ico_right-arrow').addEventListener('click', function() {
+    if (isEnabled) {
+        previousItem(currentItem);
+        changeBg();
+        changeArrows();
+    }
+});
+
+document.querySelector('.ico_left-arrow').addEventListener('click', function() {
+    if (isEnabled) {
+        nextItem(currentItem);
+        changeBg();
+        changeArrows();
+    }
+});
+
 
 //phone-images
 function phoneOff() {
@@ -133,7 +168,7 @@ function displayPhoneHor () {
 phoneOff();
 
 
-
+//modal//
 let subject = document.querySelector('#subject');
 let description = document.querySelector('#description');
 
