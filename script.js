@@ -21,6 +21,7 @@ function onScroll(event) {
             });
         }
     });
+    hideNav();
 }
 
 
@@ -141,18 +142,18 @@ const DISPLAY_HOR = document.querySelector('.phone-display-horizontal');
 
 
 function displayPhoneVert () {
-    if (DISPLAY_VERT.style.display == 'none') {
-        DISPLAY_VERT.style.display = '';
-    } else {
+    if (DISPLAY_VERT.style.display == 'block') {
         DISPLAY_VERT.style.display = 'none';
+    } else {
+        DISPLAY_VERT.style.display = 'block';
     }
 }
 
 function displayPhoneHor () {
-    if (DISPLAY_HOR.style.display == 'none') {
-        DISPLAY_HOR.style.display = '';
-    } else {
+    if (DISPLAY_HOR.style.display == 'block') {
         DISPLAY_HOR.style.display = 'none';
+    } else {
+        DISPLAY_HOR.style.display = 'block';
     }
 }
 
@@ -212,7 +213,7 @@ SUBMIT.addEventListener('click', event => {
     event.preventDefault();
     if (validateEmail() && validateName()) {
         pasteForm();
-        modalShow();
+        modalShow(); 
     } else {
         alert('Enter the required data');
     }
@@ -225,4 +226,54 @@ MODAL_BTN.addEventListener('click', event => {
     document.querySelectorAll('.form-item').forEach(el => el.value = '');
 })
 
+
+// header
+let headerNav = document.querySelector('.header__navigation');
+let nav = document.querySelector('.navigation');
+let logo = document.querySelector('.logo');
+document.querySelector('.hamburger-block').addEventListener('click', function(event){
+    if (logo.classList.contains('logo_opened')) {
+        logo.classList.remove('logo_opened');
+    } else {
+        logo.classList.add('logo_opened');
+    }
+    if(headerNav.classList.contains('header__navigation_opened')) {
+        headerNav.classList.remove('header__navigation_opened');
+    } else {
+        headerNav.classList.add('header__navigation_opened');
+    }
+    if(nav.classList.contains('navigation_opened')) {
+        nav.classList.remove('navigation_opened');
+    } else {
+        nav.classList.add('navigation_opened');
+    }
+
+    if (document.querySelector('.hamburger-block').classList.contains('hamburger-block-opened')) {
+        document.querySelector('.hamburger-block').classList.remove('hamburger-block-opened');
+    } else {
+        document.querySelector('.hamburger-block').classList.add('hamburger-block-opened');
+    }
+    if (FADE.classList.contains('modal-show')) {
+        FADE.classList.remove('modal-show');
+    } else {
+        FADE.classList.add('modal-show');
+    }
+});
+function hideNav() {
+    if(headerNav.classList.contains('header__navigation_opened')) {
+        headerNav.classList.remove('header__navigation_opened');
+    } 
+    if(nav.classList.contains('navigation_opened')) {
+        nav.classList.remove('navigation_opened');
+    } 
+
+    if (document.querySelector('.hamburger-block').classList.contains('hamburger-block-opened')) {
+        document.querySelector('.hamburger-block').classList.remove('hamburger-block-opened');
+    }
+    if (logo.classList.contains('logo_opened')) {
+        logo.classList.remove('logo_opened');
+    }
+    FADE.classList.remove('modal-show');
+
+}
 
