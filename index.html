@@ -9,12 +9,13 @@
     <script src="script.js" defer></script>
 </head>
 <body>
-    <header class="header" id="home">
+    <header class="header">
         <div class="header__wrapper wrapper">
+            <div class='hamburger-block'><span class="header__hamburger hamburger"><span class="hamburger__line"></span></span></div>
             <a href="#" class="logo"><h1>SINGOLO<span class="logo_colored">*</span></h1></a>
             <nav class="header__navigation">
                 <ul class="navigation">
-                    <li class="navigation__item"><a href="#home" class="navigation__link">Home</a></li>
+                    <li class="navigation__item"><a href="#home" class="navigation__link active-nav">Home</a></li>
                     <li class="navigation__item"><a href="#services" class="navigation__link">Services</a></li>
                     <li class="navigation__item"><a href="#portfolio" class="navigation__link">Portfolio</a></li>
                     <li class="navigation__item"><a href="#about" class="navigation__link">About</a></li>
@@ -23,31 +24,40 @@
             </nav>
         </div>
     </header>
-    <section class="slider">
+    <section class="slider" id="home">
         <div class="wrapper">
-            <div class="slider__buttons">
-                <a href="#"><span class="ico ico_left-arrow"></span></a>
-                <a href="#"><span class="ico ico_right-arrow"></span></a>
+            <div class="carousel">
+                <div class="slider__buttons">
+                    <a href="#"><span class="ico ico_left-arrow">
+                        <svg class="arrow" width="16" height="27" viewBox="0 0 16 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M15.3022 4.0077C16.2333 3.09077 16.2325 1.64471 15.3003 0.728736C14.3113 -0.242912 12.6634 -0.242912 11.6745 0.728737L0.955147 11.2608C-0.318384 12.5121 -0.318381 14.4879 0.955149 15.7392L11.6745 26.2713C12.6634 27.2429 14.3113 27.2429 15.3003 26.2713C16.2325 25.3553 16.2333 23.9092 15.3022 22.9923L7.93355 15.7366C6.66347 14.486 6.66347 12.514 7.93355 11.2634L15.3022 4.0077Z" fill="#E94348"/>
+                        </svg>
+                    </span></a>
+                    <a href="#"><span class="ico ico_right-arrow">
+                        <svg class="arrow" width="16" height="27" viewBox="0 0 16 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M0.697849 22.9923C-0.233349 23.9092 -0.232514 25.3553 0.699743 26.2713C1.68867 27.2429 3.33657 27.2429 4.32549 26.2713L15.0449 15.7392C16.3184 14.4879 16.3184 12.5121 15.0449 11.2608L4.32549 0.728735C3.33657 -0.242913 1.68867 -0.242911 0.699746 0.728737C-0.232511 1.64471 -0.233347 3.09077 0.69785 4.00769L8.06645 11.2634C9.33653 12.514 9.33653 14.486 8.06645 15.7366L0.697849 22.9923Z" fill="#E94348"/>
+                        </svg> 
+                    </span></a>
+                </div>
+                <ul class="slider__list">
+                    <li class="slider-item active-slider" id="slide1">
+                        <figure>
+                            <div class="slider__image slider__image-vertical">
+                                <img class="phone" src="assets/img/phone/phone-vertical.png" alt="iphone_vertical">
+                                <div class="phone-display phone-display-vertical"></div>
+                            </div>
+                            <div class="slider__image slider__image-horizontal">
+                                <img class="phone" src="assets/img/phone/phone-horizontal.png" alt="iphone_horizontal">
+                                <div class="phone-display phone-display-horizontal"></div>
+                            </div>  
+                    </figure>                 
+                    </li>
+                    <li class="slider-item" id="slide2">
+                        <img src="assets/img/slider.jpg" alt="slider">
+                    </li>
+                </ul>
             </div>
-            <ul class="slider__list">
-                <li class="slider-item" id="slide1">
-                    <figure>
-                        <div class="slider__image slider__image-vertical">
-                            <img class="phone" src="assets/img/phone/phone-vertical.svg" alt="iphone_vertical">
-                            <img class="phone-display phone-display-vertical" src="assets/img/phone/phone-vertical-display.png" alt="iphone_vertical">
-                            <img class="phone-shadow" src="assets/img/phone/phone-vertical-shadow.png" alt="iphone_vertical">
-                        </div>
-                        <div class="slider__image slider__image-horizontal">
-                            <img class="phone" src="assets/img/phone/phone-horizontal.svg" alt="iphone_horizontal">
-                            <img class="phone-display phone-display-horizontal" src="assets/img/phone/phone-horizontal-display.png" alt="iphone_horizontal">
-                            <img class="phone-shadow" src="assets/img/phone/phone-horizontal-shadow.png" alt="iphone_horizontal">
-                        </div>  
-                </figure>                 
-                </li>
-                <li class="slider-item" id="slide2">
-                    <img src="assets/img/slider.jpg" alt="slider">
-                </li>
-            </ul>
+            
         </div>
     </section>
     <section class="services" id="services">
@@ -59,7 +69,7 @@
                     <li class="service">
                         <div class="service__icon">
                             <span class="icon-circle">
-                                <span class="ico ico_pen"></span>
+                                <span class="ico-service ico_pen"></span>
                             </span>
                         </div>
                         <div class="service__description">
@@ -70,7 +80,7 @@
                     <li class="service">
                         <div class="service__icon">
                             <span class="icon-circle">
-                                <span class="ico ico_bulb"></span>
+                                <span class="ico-service ico_bulb"></span>
                             </span>
                         </div>
                         <div class="service__description">
@@ -81,7 +91,7 @@
                     <li class="service">
                         <div class="service__icon">
                             <span class="icon-circle">
-                                <span class="ico ico_heart"></span>
+                                <span class="ico-service ico_heart"></span>
                             </span>
                         </div>
                         <div class="service__description">
@@ -92,7 +102,7 @@
                     <li class="service">
                         <div class="service__icon">
                             <span class="icon-circle">
-                                <span class="ico ico_phone"></span>
+                                <span class="ico-service ico_phone"></span>
                             </span>
                         </div>
                         <div class="service__description">
@@ -103,7 +113,7 @@
                     <li class="service">
                         <div class="service__icon">
                             <span class="icon-circle">
-                                <span class="ico ico_bubble"></span>
+                                <span class="ico-service ico_bubble"></span>
                             </span>
                         </div>
                         <div class="service__description">
@@ -114,7 +124,7 @@
                     <li class="service">
                         <div class="service__icon">
                             <span class="icon-circle">
-                                <span class="ico ico_star"></span>
+                                <span class="ico-service ico_star"></span>
                             </span>
                         </div>
                         <div class="service__description">
@@ -137,211 +147,104 @@
                 <span class="tag">Artwork</span>
             </div>
             <ul class="layout-4-column">
-                <li class="layout-4-column-item"><img class="layout-4-column-item__img" src="assets/img/1.png" alt="pic"></li>
-                <li class="layout-4-column-item"><img class="layout-4-column-item__img" src="assets/img/2.png" alt="pic"></li>
-                <li class="layout-4-column-item"><img class="layout-4-column-item__img" src="assets/img/3.png" alt="pic"></li>
-                <li class="layout-4-column-item"><img class="layout-4-column-item__img" src="assets/img/4.png" alt="pic"></li>
-                <li class="layout-4-column-item"><img class="layout-4-column-item__img" src="assets/img/5.png" alt="pic"></li>
-                <li class="layout-4-column-item"><img class="layout-4-column-item__img" src="assets/img/6.png" alt="pic"></li>
-                <li class="layout-4-column-item"><img class="layout-4-column-item__img" src="assets/img/7.png" alt="pic"></li>
-                <li class="layout-4-column-item"><img class="layout-4-column-item__img" src="assets/img/8.png" alt="pic"></li>
-                <li class="layout-4-column-item"><img class="layout-4-column-item__img" src="assets/img/9.png" alt="pic"></li>
-                <li class="layout-4-column-item"><img class="layout-4-column-item__img" src="assets/img/10.png" alt="pic"></li>
-                <li class="layout-4-column-item"><img class="layout-4-column-item__img" src="assets/img/11.png" alt="pic"></li>
-                <li class="layout-4-column-item"><img class="layout-4-column-item__img" src="assets/img/12.png" alt="pic"></li>
+                <li class="layout-4-column-item"><div><img class="layout-4-column-item__img" src="assets/img/portfolio/portfolio-1.png" alt="pic"></div></li>
+                <li class="layout-4-column-item"><div><img class="layout-4-column-item__img" src="assets/img/portfolio/portfolio-2.png" alt="pic"></div></li>
+                <li class="layout-4-column-item"><div><img class="layout-4-column-item__img" src="assets/img/portfolio/portfolio-3.png" alt="pic"></div></li>
+                <li class="layout-4-column-item"><div><img class="layout-4-column-item__img" src="assets/img/portfolio/portfolio-4.png" alt="pic"></div></li>
+                <li class="layout-4-column-item"><div><img class="layout-4-column-item__img" src="assets/img/portfolio/portfolio-5.png" alt="pic"></div></li>
+                <li class="layout-4-column-item"><div><img class="layout-4-column-item__img" src="assets/img/portfolio/portfolio-6.png" alt="pic"></div></li>
+                <li class="layout-4-column-item"><div><img class="layout-4-column-item__img" src="assets/img/portfolio/portfolio-7.png" alt="pic"></div></li>
+                <li class="layout-4-column-item"><div><img class="layout-4-column-item__img" src="assets/img/portfolio/portfolio-8.png" alt="pic"></div></li>
+                <li class="layout-4-column-item"><div><img class="layout-4-column-item__img" src="assets/img/portfolio/portfolio-9.png" alt="pic"></div></li>
+                <li class="layout-4-column-item"><div><img class="layout-4-column-item__img" src="assets/img/portfolio/portfolio-10.png" alt="pic"></div></li>
+                <li class="layout-4-column-item"><div><img class="layout-4-column-item__img" src="assets/img/portfolio/portfolio-11.png" alt="pic"></div></li>
+                <li class="layout-4-column-item"><div><img class="layout-4-column-item__img" src="assets/img/portfolio/portfolio-12.png" alt="pic"></div></li>
             </ul>
         </div>
     </section>
     <section class="about-us" id="about">
-        <div class="wrapper">
+        <div class="wrapper about-us__wrapper">
             <h2 class="about-us__title">About Us</h2>
             <p class="about-us__subtitle">Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum. Duis mollis, non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
             <div class="about-us__layout-3-column">
                 <div class="employee">
-                    <img src="assets/img/employee1.png" alt="employee1">
+                    <img src="assets/img/employee1.jpg" alt="employee1">
                     <h5 class="employee__name">Adam Jensen</h5>
                     <p class="employee__description">Quisque luctus, quam eget molestie commodo, lacus purus cursus purus, nec rutrum tellus dolor id lorem.</p>
                     <ul class="social-buttons">
-                        <li>
+                        <li  class="social-button ico-facebook">
                             <a href="#">
                                 <span class="visually-hidden">Facebook</span>
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
-                                    <defs>
-                                        <image width="33" height="34" id="Facebook" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACEAAAAiCAMAAADmrkDzAAAAAXNSR0IB2cksfwAAAJlQTFRFAAAAZW2IZW2JZW2JZW2JZW2JZW2JZGyJZW2JZW2JZGyIZWyHYmyHZGyDZGyJZW2JZGyIX2aDZGyIZW2JZG2IY2yIZG2HZW2JZW2JZGyIYWGGZGyIZG2IZW2JZW2JZGyJZW2JZW2JZW2JZW2IZW2JZW2JZW2JZW2JZW2JZW2JZW2JZW2JZW2JZW2JZW2JZW2JZW2JZW2JZW2J24L9EgAAADN0Uk5TABdmpNHv/zeo67iGUyECk54jLNDoWlk88KMVK17Nji6dMsgK/RTuWXGrcJaQMMalV+f8ik79xAAAARdJREFUeJyVlOtigjAMhePtKDcFBQTvm7dNh1Pf/+G0iDYtuLL8oD3tRxPSBKJ/WKPZaneATrvVbFTtd3uwbMf1PNexLfS6+n5/AD+QMvAx6CvAcBRG6itxOBoyOU7SiX7qJE3GLzFNZlWRzZLpczpPqwCidF5MFmHJReEoXOTjEnE1QBRhKYaVzxc/PgG8lL+6P9Yblgfa7sCJYLMm2lv8iC/g+3CQ2toTHW1O/AAZ1/aR6ORInWW/wDljjHMiurhSozC54l6Irt5fhHdVibIXQXAv5UiFFx5pmRCRmr9WzZhOiIypWdeIPOvqzWlEfnP329dKVFr8uH1zBdWowhqVbO6GvKO0Yo3UjqrRlWTubGGmv8NbuwHidBbXlFGqjQAAAABJRU5ErkJggg=="/>
-                                    </defs>
-                                    <style>
-                                        tspan { white-space:pre }
-                                    </style>
-                                    <use id="Facebook" href="#Facebook" x="0" y="-1" />
-                                </svg>
                             </a>
                         </li>
-                        <li>
+                        <li class="social-button ico-google">
                             <a href="#">
-                                <span class="visually-hidden">Google</span>
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
-                                    <defs>
-                                        <image width="33" height="34" id="Google" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACEAAAAiCAMAAADmrkDzAAAAAXNSR0IB2cksfwAAAKJQTFRFAAAAZW2IZW2JZW2JZW2JZW2JZW2JZGyJZW2JZW2JZGyIZWyHYmyHZGyDZGyJZW2JZGyIX2aDZGyIZW2JZG2IY2yIZG2HZW2JZW2JZGyIYWGGZGyIZG2IZW2JZW2JZGyJZW2JZW2JZW2JZW2IZW2JZW2JZW2JZW2JZW2JZW2JZW2JZW2JZW2JZW2JZW2JZW2JZW2JZW2JZW2JZW2JZW2JZW2JhFRFVAAAADZ0Uk5TABdmpNHv/zeo67iGUyECk54jLNDoWlk88KMVK17Nji6dEJ8K/c/fQGAgWYCWj7/G5zD8cFCvU+3SiQAAAVJJREFUeJyVVOeagjAQXAujNEVFBTsoWFAsd/f+r3YJBzFB/PDmR5Ilk+0L0T/QaLbaGqC1W81G1X2nC90wLdu2TENHt1O+7/XhDJ7iwEG/pxCGI3esPpm4o6EkTj1/VtY6872pEObeosqzhTcvjku/ikDkL/PDyn0xkRtyV9m+xqSaQDTGmm8bJ5eDECxfoUxxNmzZ7oo8RPH+ABxlxmC3JTrpubRHQhRir9jRT0RnIxcSXPjCGEgFwzgTXU2hQwuYjqPCMK9EN6uQIsQhLvc0hZYWHOtG9LALRvCVImaqMuTf7IfMILoDPFjJCmcIK0ES88eJwuBWhKcpwoC+obGADoqnIlpEfA1BMni0ImPMS4ZYe8mYyHqEKGGuXGRClnVRueMPL1yiqMgqx6pfatEnJn/Vr++gD7rwg06un4ZsokrNOlYn6oOppPrJ5qj7O7zFL9ryGzKYUWghAAAAAElFTkSuQmCC"/>
-                                    </defs>
-                                    <style>
-                                        tspan { white-space:pre }
-                                    </style>
-                                    <use id="Google" href="#Google" x="0" y="-1" />
-                                </svg>
+                                <span class="visually-hidden">Google</span>    
                             </a>
                         </li>
-                        <li>
+                        <li class="social-button ico-twitter">
                             <a href="#">
-                                <span class="visually-hidden">Twitter</span>
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
-                                    <defs>
-                                        <image width="33" height="34" id="Twitter" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACEAAAAiCAMAAADmrkDzAAAAAXNSR0IB2cksfwAAAKJQTFRFAAAAZW2IZW2JZW2JZW2JZW2JZW2JZGyJZW2JZW2JZGyIZWyHYmyHZGyDZGyJZW2JZGyIX2aDZGyIZW2JZG2IY2yIZG2HZW2JZW2JZGyIYWGGZGyIZG2IZW2JZW2JZGyJZW2JZW2IZW2JZW2JZW2JZW2JZW2JZW2JZW2JZW2JZW2JZW2JZW2JZW2JZW2JZW2JZW2JZW2JZW2JZW2JZW2JZW2J25q7ewAAADZ0Uk5TABdmpNHv/zeo67iGUyECk54jLNDoWlk88KMVK17Nji6dCv0gMN+PYFmAEK+WQMafv+dw/FDPwuh/3gAAATxJREFUeJyVlNmagjAMhY8LUTYFBQT3BUHQkVFn3v/VBmpZhQ8mF5S0P016mgD8w3r9wVAgEoaDfq9ufTQmUZIVVVVkSaTxqLo+mZKm566u0XRSAmZzwyx/YhnzWcFd2M6yuuvSsReZs7LXdZmt7VX6unHqAMDZ8Jet8RGCBzK2bNyRVQ8AJu2SYa81AYC2jx+HI9fh5LLBPRN5vvee048H4CJyPhASJIx1j+3KJ8ULcJNSgoQgxBcDyOeT0g24y9xJ1oQoYsB3moh8Bx4Kd56UWxoEygN4qdzxC8QzJdRXgUCUE26RyKLgJwOyNFiULFOEvx9bsEyz08bItXxUftpcseC9h1AAmGK56lEi59k7FQCmevvNxbdvNgHW+/bbK6hDFXao5PZuYB1VKVaz3FEduhLtnZ1Y29+h0f4AXYIZL0FDKL0AAAAASUVORK5CYII="/>
-                                    </defs>
-                                    <style>
-                                        tspan { white-space:pre }
-                                    </style>
-                                    <use id="Twitter" href="#Twitter" x="0" y="-1" />
-                                </svg>
+                                <span class="visually-hidden">Twitter</span>  
                             </a>
                         </li>
-                        <li>
+                        <li class="social-button ico-linkedin">
                             <a href="#">
-                                <span class="visually-hidden">LinkedIn</span>
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
-                                    <defs>
-                                        <image width="33" height="34" id="LinkedIn" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACEAAAAiCAMAAADmrkDzAAAAAXNSR0IB2cksfwAAAJNQTFRFAAAAZW2IZW2JZW2JZW2JZW2JZW2JZGyJZW2JZW2JZGyIZWyHYmyHZGyDZGyJZW2JZGyIX2aDZGyIZW2JZG2IY2yIZG2HZW2JZW2JZGyIYWGGZGyIZG2IZW2JZW2JZGyJZW2JZW2JZW2JZW2JZW2IZW2JZW2JZW2JZW2JZW2JZW2JZW2JZW2JZW2JZW2JZW2JZW2JfJUvSwAAADF0Uk5TABdmpNHv/zeo67iGUyECk54jLNDoWlk88KMVK17Nji6dz98QCv1AWZbGgI/n/J9QIPPMMyMAAAEjSURBVHiclZTpuoIgEIa/FqfcSktN2zunbD+n+7+6QHEB6dHmB8zAKwOzCHwhvf5gaBAZw0G/p9sfjcm0bMd1HdsyaTxS9ydT8vzK9D2aTiRgNg9C+ZMomM9q5iJOluqpyyRelMYqXututo5XhbpJdACQbISyDRouhKNgm807ivQAENKOT3svNw/086si3p4Nx5OIAxGlKuGfjsDZRHGG0TgD5hm4WIXVOIGJdQGuNiovKdHtzpR7QdhX4OHIBMsuk5tYdB7A05UJMv54CYhF96khUvyzsUaoXtjeqyK4F/WmlKu1m5av1RL8tWXEtASPmBR1lciiXmZOR2SZY9lXSrSSKM9+ewV1qMIOldzeDVlHKcUayh3VoSvR3tlc2v4OH+UNgpQXZaY+H3oAAAAASUVORK5CYII="/>
-                                    </defs>
-                                    <style>
-                                        tspan { white-space:pre }
-                                    </style>
-                                    <use id="LinkedIn" href="#LinkedIn" x="0" y="-1" />
-                                </svg>
+                                <span class="visually-hidden">LinkedIn</span> 
                             </a>
                         </li>
+                       
                     </ul>
                 </div>
                 <div class="employee">
-                    <img src="assets/img/employee2.png" alt="employee2">
+                    <img src="assets/img/employee2.jpg" alt="employee2">
                     <h5 class="employee__name">Desmond Miles</h5>
                     <p class="employee__description">Curabitur vestibulum eget mauris quis laoreet. Phasellus in quam laoreet, viverra lacus ut, ultrices velit.</p>
                     <ul class="social-buttons">
-                        <li>
+                        <li  class="social-button ico-facebook">
                             <a href="#">
                                 <span class="visually-hidden">Facebook</span>
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
-                                    <defs>
-                                        <image width="33" height="34" id="Facebook" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACEAAAAiCAMAAADmrkDzAAAAAXNSR0IB2cksfwAAAJlQTFRFAAAAZW2IZW2JZW2JZW2JZW2JZW2JZGyJZW2JZW2JZGyIZWyHYmyHZGyDZGyJZW2JZGyIX2aDZGyIZW2JZG2IY2yIZG2HZW2JZW2JZGyIYWGGZGyIZG2IZW2JZW2JZGyJZW2JZW2JZW2JZW2IZW2JZW2JZW2JZW2JZW2JZW2JZW2JZW2JZW2JZW2JZW2JZW2JZW2JZW2JZW2J24L9EgAAADN0Uk5TABdmpNHv/zeo67iGUyECk54jLNDoWlk88KMVK17Nji6dMsgK/RTuWXGrcJaQMMalV+f8ik79xAAAARdJREFUeJyVlOtigjAMhePtKDcFBQTvm7dNh1Pf/+G0iDYtuLL8oD3tRxPSBKJ/WKPZaneATrvVbFTtd3uwbMf1PNexLfS6+n5/AD+QMvAx6CvAcBRG6itxOBoyOU7SiX7qJE3GLzFNZlWRzZLpczpPqwCidF5MFmHJReEoXOTjEnE1QBRhKYaVzxc/PgG8lL+6P9Yblgfa7sCJYLMm2lv8iC/g+3CQ2toTHW1O/AAZ1/aR6ORInWW/wDljjHMiurhSozC54l6Irt5fhHdVibIXQXAv5UiFFx5pmRCRmr9WzZhOiIypWdeIPOvqzWlEfnP329dKVFr8uH1zBdWowhqVbO6GvKO0Yo3UjqrRlWTubGGmv8NbuwHidBbXlFGqjQAAAABJRU5ErkJggg=="/>
-                                    </defs>
-                                    <style>
-                                        tspan { white-space:pre }
-                                    </style>
-                                    <use id="Facebook" href="#Facebook" x="0" y="-1" />
-                                </svg>
                             </a>
                         </li>
-                        <li>
+                        <li class="social-button ico-google">
                             <a href="#">
-                                <span class="visually-hidden">Google</span>
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
-                                    <defs>
-                                        <image width="33" height="34" id="Google" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACEAAAAiCAMAAADmrkDzAAAAAXNSR0IB2cksfwAAAKJQTFRFAAAAZW2IZW2JZW2JZW2JZW2JZW2JZGyJZW2JZW2JZGyIZWyHYmyHZGyDZGyJZW2JZGyIX2aDZGyIZW2JZG2IY2yIZG2HZW2JZW2JZGyIYWGGZGyIZG2IZW2JZW2JZGyJZW2JZW2JZW2JZW2IZW2JZW2JZW2JZW2JZW2JZW2JZW2JZW2JZW2JZW2JZW2JZW2JZW2JZW2JZW2JZW2JZW2JZW2JhFRFVAAAADZ0Uk5TABdmpNHv/zeo67iGUyECk54jLNDoWlk88KMVK17Nji6dEJ8K/c/fQGAgWYCWj7/G5zD8cFCvU+3SiQAAAVJJREFUeJyVVOeagjAQXAujNEVFBTsoWFAsd/f+r3YJBzFB/PDmR5Ilk+0L0T/QaLbaGqC1W81G1X2nC90wLdu2TENHt1O+7/XhDJ7iwEG/pxCGI3esPpm4o6EkTj1/VtY6872pEObeosqzhTcvjku/ikDkL/PDyn0xkRtyV9m+xqSaQDTGmm8bJ5eDECxfoUxxNmzZ7oo8RPH+ABxlxmC3JTrpubRHQhRir9jRT0RnIxcSXPjCGEgFwzgTXU2hQwuYjqPCMK9EN6uQIsQhLvc0hZYWHOtG9LALRvCVImaqMuTf7IfMILoDPFjJCmcIK0ES88eJwuBWhKcpwoC+obGADoqnIlpEfA1BMni0ImPMS4ZYe8mYyHqEKGGuXGRClnVRueMPL1yiqMgqx6pfatEnJn/Vr++gD7rwg06un4ZsokrNOlYn6oOppPrJ5qj7O7zFL9ryGzKYUWghAAAAAElFTkSuQmCC"/>
-                                    </defs>
-                                    <style>
-                                        tspan { white-space:pre }
-                                    </style>
-                                    <use id="Google" href="#Google" x="0" y="-1" />
-                                </svg>
+                                <span class="visually-hidden">Google</span>    
                             </a>
                         </li>
-                        <li>
+                        <li class="social-button ico-twitter">
                             <a href="#">
-                                <span class="visually-hidden">Twitter</span>
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
-                                    <defs>
-                                        <image width="33" height="34" id="Twitter" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACEAAAAiCAMAAADmrkDzAAAAAXNSR0IB2cksfwAAAKJQTFRFAAAAZW2IZW2JZW2JZW2JZW2JZW2JZGyJZW2JZW2JZGyIZWyHYmyHZGyDZGyJZW2JZGyIX2aDZGyIZW2JZG2IY2yIZG2HZW2JZW2JZGyIYWGGZGyIZG2IZW2JZW2JZGyJZW2JZW2IZW2JZW2JZW2JZW2JZW2JZW2JZW2JZW2JZW2JZW2JZW2JZW2JZW2JZW2JZW2JZW2JZW2JZW2JZW2JZW2J25q7ewAAADZ0Uk5TABdmpNHv/zeo67iGUyECk54jLNDoWlk88KMVK17Nji6dCv0gMN+PYFmAEK+WQMafv+dw/FDPwuh/3gAAATxJREFUeJyVlNmagjAMhY8LUTYFBQT3BUHQkVFn3v/VBmpZhQ8mF5S0P016mgD8w3r9wVAgEoaDfq9ufTQmUZIVVVVkSaTxqLo+mZKm566u0XRSAmZzwyx/YhnzWcFd2M6yuuvSsReZs7LXdZmt7VX6unHqAMDZ8Jet8RGCBzK2bNyRVQ8AJu2SYa81AYC2jx+HI9fh5LLBPRN5vvee048H4CJyPhASJIx1j+3KJ8ULcJNSgoQgxBcDyOeT0g24y9xJ1oQoYsB3moh8Bx4Kd56UWxoEygN4qdzxC8QzJdRXgUCUE26RyKLgJwOyNFiULFOEvx9bsEyz08bItXxUftpcseC9h1AAmGK56lEi59k7FQCmevvNxbdvNgHW+/bbK6hDFXao5PZuYB1VKVaz3FEduhLtnZ1Y29+h0f4AXYIZL0FDKL0AAAAASUVORK5CYII="/>
-                                    </defs>
-                                    <style>
-                                        tspan { white-space:pre }
-                                    </style>
-                                    <use id="Twitter" href="#Twitter" x="0" y="-1" />
-                                </svg>
+                                <span class="visually-hidden">Twitter</span>  
                             </a>
                         </li>
-                        <li>
+                        <li class="social-button ico-linkedin">
                             <a href="#">
-                                <span class="visually-hidden">LinkedIn</span>
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
-                                    <defs>
-                                        <image width="33" height="34" id="LinkedIn" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACEAAAAiCAMAAADmrkDzAAAAAXNSR0IB2cksfwAAAJNQTFRFAAAAZW2IZW2JZW2JZW2JZW2JZW2JZGyJZW2JZW2JZGyIZWyHYmyHZGyDZGyJZW2JZGyIX2aDZGyIZW2JZG2IY2yIZG2HZW2JZW2JZGyIYWGGZGyIZG2IZW2JZW2JZGyJZW2JZW2JZW2JZW2JZW2IZW2JZW2JZW2JZW2JZW2JZW2JZW2JZW2JZW2JZW2JZW2JZW2JfJUvSwAAADF0Uk5TABdmpNHv/zeo67iGUyECk54jLNDoWlk88KMVK17Nji6dz98QCv1AWZbGgI/n/J9QIPPMMyMAAAEjSURBVHiclZTpuoIgEIa/FqfcSktN2zunbD+n+7+6QHEB6dHmB8zAKwOzCHwhvf5gaBAZw0G/p9sfjcm0bMd1HdsyaTxS9ydT8vzK9D2aTiRgNg9C+ZMomM9q5iJOluqpyyRelMYqXututo5XhbpJdACQbISyDRouhKNgm807ivQAENKOT3svNw/086si3p4Nx5OIAxGlKuGfjsDZRHGG0TgD5hm4WIXVOIGJdQGuNiovKdHtzpR7QdhX4OHIBMsuk5tYdB7A05UJMv54CYhF96khUvyzsUaoXtjeqyK4F/WmlKu1m5av1RL8tWXEtASPmBR1lciiXmZOR2SZY9lXSrSSKM9+ewV1qMIOldzeDVlHKcUayh3VoSvR3tlc2v4OH+UNgpQXZaY+H3oAAAAASUVORK5CYII="/>
-                                    </defs>
-                                    <style>
-                                        tspan { white-space:pre }
-                                    </style>
-                                    <use id="LinkedIn" href="#LinkedIn" x="0" y="-1" />
-                                </svg>
+                                <span class="visually-hidden">LinkedIn</span> 
                             </a>
                         </li>
                     </ul>
                 </div>
                 <div class="employee">
-                    <img src="assets/img/employee3.png" alt="employee3">
+                    <img src="assets/img/employee3.jpg" alt="employee3">
                     <h5 class="employee__name">Scolara Visari</h5>
                     <p class="employee__description">Nulla sed nunc et tortor luctus faucibus. Morbi at aliquet turpis, et consequat felis. Quisque condimentum.</p>
                     <ul class="social-buttons">
-                        <li>
-                            <a href="#" class="social-button">
+                        <li  class="social-button ico-facebook">
+                            <a href="#">
                                 <span class="visually-hidden">Facebook</span>
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
-                                    <defs>
-                                        <image width="33" height="34" id="Facebook" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACEAAAAiCAMAAADmrkDzAAAAAXNSR0IB2cksfwAAAJlQTFRFAAAAZW2IZW2JZW2JZW2JZW2JZW2JZGyJZW2JZW2JZGyIZWyHYmyHZGyDZGyJZW2JZGyIX2aDZGyIZW2JZG2IY2yIZG2HZW2JZW2JZGyIYWGGZGyIZG2IZW2JZW2JZGyJZW2JZW2JZW2JZW2IZW2JZW2JZW2JZW2JZW2JZW2JZW2JZW2JZW2JZW2JZW2JZW2JZW2JZW2JZW2J24L9EgAAADN0Uk5TABdmpNHv/zeo67iGUyECk54jLNDoWlk88KMVK17Nji6dMsgK/RTuWXGrcJaQMMalV+f8ik79xAAAARdJREFUeJyVlOtigjAMhePtKDcFBQTvm7dNh1Pf/+G0iDYtuLL8oD3tRxPSBKJ/WKPZaneATrvVbFTtd3uwbMf1PNexLfS6+n5/AD+QMvAx6CvAcBRG6itxOBoyOU7SiX7qJE3GLzFNZlWRzZLpczpPqwCidF5MFmHJReEoXOTjEnE1QBRhKYaVzxc/PgG8lL+6P9Yblgfa7sCJYLMm2lv8iC/g+3CQ2toTHW1O/AAZ1/aR6ORInWW/wDljjHMiurhSozC54l6Irt5fhHdVibIXQXAv5UiFFx5pmRCRmr9WzZhOiIypWdeIPOvqzWlEfnP329dKVFr8uH1zBdWowhqVbO6GvKO0Yo3UjqrRlWTubGGmv8NbuwHidBbXlFGqjQAAAABJRU5ErkJggg=="/>
-                                    </defs>
-                                    <style>
-                                        tspan { white-space:pre }
-                                    </style>
-                                    <use id="Facebook" href="#Facebook" x="0" y="-1" />
-                                </svg>
                             </a>
                         </li>
-                        <li>
+                        <li class="social-button ico-google">
                             <a href="#">
-                                <span class="visually-hidden">Google</span>
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
-                                    <defs>
-                                        <image width="33" height="34" id="Google" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACEAAAAiCAMAAADmrkDzAAAAAXNSR0IB2cksfwAAAKJQTFRFAAAAZW2IZW2JZW2JZW2JZW2JZW2JZGyJZW2JZW2JZGyIZWyHYmyHZGyDZGyJZW2JZGyIX2aDZGyIZW2JZG2IY2yIZG2HZW2JZW2JZGyIYWGGZGyIZG2IZW2JZW2JZGyJZW2JZW2JZW2JZW2IZW2JZW2JZW2JZW2JZW2JZW2JZW2JZW2JZW2JZW2JZW2JZW2JZW2JZW2JZW2JZW2JZW2JZW2JhFRFVAAAADZ0Uk5TABdmpNHv/zeo67iGUyECk54jLNDoWlk88KMVK17Nji6dEJ8K/c/fQGAgWYCWj7/G5zD8cFCvU+3SiQAAAVJJREFUeJyVVOeagjAQXAujNEVFBTsoWFAsd/f+r3YJBzFB/PDmR5Ilk+0L0T/QaLbaGqC1W81G1X2nC90wLdu2TENHt1O+7/XhDJ7iwEG/pxCGI3esPpm4o6EkTj1/VtY6872pEObeosqzhTcvjku/ikDkL/PDyn0xkRtyV9m+xqSaQDTGmm8bJ5eDECxfoUxxNmzZ7oo8RPH+ABxlxmC3JTrpubRHQhRir9jRT0RnIxcSXPjCGEgFwzgTXU2hQwuYjqPCMK9EN6uQIsQhLvc0hZYWHOtG9LALRvCVImaqMuTf7IfMILoDPFjJCmcIK0ES88eJwuBWhKcpwoC+obGADoqnIlpEfA1BMni0ImPMS4ZYe8mYyHqEKGGuXGRClnVRueMPL1yiqMgqx6pfatEnJn/Vr++gD7rwg06un4ZsokrNOlYn6oOppPrJ5qj7O7zFL9ryGzKYUWghAAAAAElFTkSuQmCC"/>
-                                    </defs>
-                                    <style>
-                                        tspan { white-space:pre }
-                                    </style>
-                                    <use id="Google" href="#Google" x="0" y="-1" />
-                                </svg>
+                                <span class="visually-hidden">Google</span>    
                             </a>
                         </li>
-                        <li>
+                        <li class="social-button ico-twitter">
                             <a href="#">
-                                <span class="visually-hidden">Twitter</span>
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
-                                    <defs>
-                                        <image width="33" height="34" id="Twitter" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACEAAAAiCAMAAADmrkDzAAAAAXNSR0IB2cksfwAAAKJQTFRFAAAAZW2IZW2JZW2JZW2JZW2JZW2JZGyJZW2JZW2JZGyIZWyHYmyHZGyDZGyJZW2JZGyIX2aDZGyIZW2JZG2IY2yIZG2HZW2JZW2JZGyIYWGGZGyIZG2IZW2JZW2JZGyJZW2JZW2IZW2JZW2JZW2JZW2JZW2JZW2JZW2JZW2JZW2JZW2JZW2JZW2JZW2JZW2JZW2JZW2JZW2JZW2JZW2JZW2J25q7ewAAADZ0Uk5TABdmpNHv/zeo67iGUyECk54jLNDoWlk88KMVK17Nji6dCv0gMN+PYFmAEK+WQMafv+dw/FDPwuh/3gAAATxJREFUeJyVlNmagjAMhY8LUTYFBQT3BUHQkVFn3v/VBmpZhQ8mF5S0P016mgD8w3r9wVAgEoaDfq9ufTQmUZIVVVVkSaTxqLo+mZKm566u0XRSAmZzwyx/YhnzWcFd2M6yuuvSsReZs7LXdZmt7VX6unHqAMDZ8Jet8RGCBzK2bNyRVQ8AJu2SYa81AYC2jx+HI9fh5LLBPRN5vvee048H4CJyPhASJIx1j+3KJ8ULcJNSgoQgxBcDyOeT0g24y9xJ1oQoYsB3moh8Bx4Kd56UWxoEygN4qdzxC8QzJdRXgUCUE26RyKLgJwOyNFiULFOEvx9bsEyz08bItXxUftpcseC9h1AAmGK56lEi59k7FQCmevvNxbdvNgHW+/bbK6hDFXao5PZuYB1VKVaz3FEduhLtnZ1Y29+h0f4AXYIZL0FDKL0AAAAASUVORK5CYII="/>
-                                    </defs>
-                                    <style>
-                                        tspan { white-space:pre }
-                                    </style>
-                                    <use id="Twitter" href="#Twitter" x="0" y="-1" />
-                                </svg>
+                                <span class="visually-hidden">Twitter</span>  
                             </a>
                         </li>
-                        <li>
+                        <li class="social-button ico-linkedin">
                             <a href="#">
-                                <span class="visually-hidden">LinkedIn</span>
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
-                                    <defs>
-                                        <image width="33" height="34" id="LinkedIn" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACEAAAAiCAMAAADmrkDzAAAAAXNSR0IB2cksfwAAAJNQTFRFAAAAZW2IZW2JZW2JZW2JZW2JZW2JZGyJZW2JZW2JZGyIZWyHYmyHZGyDZGyJZW2JZGyIX2aDZGyIZW2JZG2IY2yIZG2HZW2JZW2JZGyIYWGGZGyIZG2IZW2JZW2JZGyJZW2JZW2JZW2JZW2JZW2IZW2JZW2JZW2JZW2JZW2JZW2JZW2JZW2JZW2JZW2JZW2JZW2JfJUvSwAAADF0Uk5TABdmpNHv/zeo67iGUyECk54jLNDoWlk88KMVK17Nji6dz98QCv1AWZbGgI/n/J9QIPPMMyMAAAEjSURBVHiclZTpuoIgEIa/FqfcSktN2zunbD+n+7+6QHEB6dHmB8zAKwOzCHwhvf5gaBAZw0G/p9sfjcm0bMd1HdsyaTxS9ydT8vzK9D2aTiRgNg9C+ZMomM9q5iJOluqpyyRelMYqXututo5XhbpJdACQbISyDRouhKNgm807ivQAENKOT3svNw/086si3p4Nx5OIAxGlKuGfjsDZRHGG0TgD5hm4WIXVOIGJdQGuNiovKdHtzpR7QdhX4OHIBMsuk5tYdB7A05UJMv54CYhF96khUvyzsUaoXtjeqyK4F/WmlKu1m5av1RL8tWXEtASPmBR1lciiXmZOR2SZY9lXSrSSKM9+ewV1qMIOldzeDVlHKcUayh3VoSvR3tlc2v4OH+UNgpQXZaY+H3oAAAAASUVORK5CYII="/>
-                                    </defs>
-                                    <style>
-                                        tspan { white-space:pre }
-                                    </style>
-                                    <use id="LinkedIn" href="#LinkedIn" x="0" y="-1" />
-                                </svg>
+                                <span class="visually-hidden">LinkedIn</span> 
                             </a>
                         </li>
                     </ul>
@@ -384,76 +287,38 @@
             <div class="footer__wrapper">
             <p class="copyright">© Copyright 2013</p>
             <ul class="social-buttons footer__social-buttons">
-                <li>
-                    <a href="#" class="social-button">
+                <li  class="social-button ico-facebook">
+                    <a href="#">
                         <span class="visually-hidden">Facebook</span>
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
-                            <defs>
-                                <image width="33" height="34" id="Facebook" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACEAAAAiCAMAAADmrkDzAAAAAXNSR0IB2cksfwAAAJlQTFRFAAAAZW2IZW2JZW2JZW2JZW2JZW2JZGyJZW2JZW2JZGyIZWyHYmyHZGyDZGyJZW2JZGyIX2aDZGyIZW2JZG2IY2yIZG2HZW2JZW2JZGyIYWGGZGyIZG2IZW2JZW2JZGyJZW2JZW2JZW2JZW2IZW2JZW2JZW2JZW2JZW2JZW2JZW2JZW2JZW2JZW2JZW2JZW2JZW2JZW2JZW2J24L9EgAAADN0Uk5TABdmpNHv/zeo67iGUyECk54jLNDoWlk88KMVK17Nji6dMsgK/RTuWXGrcJaQMMalV+f8ik79xAAAARdJREFUeJyVlOtigjAMhePtKDcFBQTvm7dNh1Pf/+G0iDYtuLL8oD3tRxPSBKJ/WKPZaneATrvVbFTtd3uwbMf1PNexLfS6+n5/AD+QMvAx6CvAcBRG6itxOBoyOU7SiX7qJE3GLzFNZlWRzZLpczpPqwCidF5MFmHJReEoXOTjEnE1QBRhKYaVzxc/PgG8lL+6P9Yblgfa7sCJYLMm2lv8iC/g+3CQ2toTHW1O/AAZ1/aR6ORInWW/wDljjHMiurhSozC54l6Irt5fhHdVibIXQXAv5UiFFx5pmRCRmr9WzZhOiIypWdeIPOvqzWlEfnP329dKVFr8uH1zBdWowhqVbO6GvKO0Yo3UjqrRlWTubGGmv8NbuwHidBbXlFGqjQAAAABJRU5ErkJggg=="/>
-                            </defs>
-                            <style>
-                                tspan { white-space:pre }
-                            </style>
-                            <use id="Facebook" href="#Facebook" x="0" y="-1" />
-                        </svg>
                     </a>
                 </li>
-                <li>
+                <li class="social-button ico-google">
                     <a href="#">
-                        <span class="visually-hidden">Google</span>
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
-                            <defs>
-                                <image width="33" height="34" id="Google" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACEAAAAiCAMAAADmrkDzAAAAAXNSR0IB2cksfwAAAKJQTFRFAAAAZW2IZW2JZW2JZW2JZW2JZW2JZGyJZW2JZW2JZGyIZWyHYmyHZGyDZGyJZW2JZGyIX2aDZGyIZW2JZG2IY2yIZG2HZW2JZW2JZGyIYWGGZGyIZG2IZW2JZW2JZGyJZW2JZW2JZW2JZW2IZW2JZW2JZW2JZW2JZW2JZW2JZW2JZW2JZW2JZW2JZW2JZW2JZW2JZW2JZW2JZW2JZW2JZW2JhFRFVAAAADZ0Uk5TABdmpNHv/zeo67iGUyECk54jLNDoWlk88KMVK17Nji6dEJ8K/c/fQGAgWYCWj7/G5zD8cFCvU+3SiQAAAVJJREFUeJyVVOeagjAQXAujNEVFBTsoWFAsd/f+r3YJBzFB/PDmR5Ilk+0L0T/QaLbaGqC1W81G1X2nC90wLdu2TENHt1O+7/XhDJ7iwEG/pxCGI3esPpm4o6EkTj1/VtY6872pEObeosqzhTcvjku/ikDkL/PDyn0xkRtyV9m+xqSaQDTGmm8bJ5eDECxfoUxxNmzZ7oo8RPH+ABxlxmC3JTrpubRHQhRir9jRT0RnIxcSXPjCGEgFwzgTXU2hQwuYjqPCMK9EN6uQIsQhLvc0hZYWHOtG9LALRvCVImaqMuTf7IfMILoDPFjJCmcIK0ES88eJwuBWhKcpwoC+obGADoqnIlpEfA1BMni0ImPMS4ZYe8mYyHqEKGGuXGRClnVRueMPL1yiqMgqx6pfatEnJn/Vr++gD7rwg06un4ZsokrNOlYn6oOppPrJ5qj7O7zFL9ryGzKYUWghAAAAAElFTkSuQmCC"/>
-                            </defs>
-                            <style>
-                                tspan { white-space:pre }
-                            </style>
-                            <use id="Google" href="#Google" x="0" y="-1" />
-                        </svg>
+                        <span class="visually-hidden">Google</span>    
                     </a>
                 </li>
-                <li>
+                <li class="social-button ico-twitter">
                     <a href="#">
-                        <span class="visually-hidden">Twitter</span>
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
-                            <defs>
-                                <image width="33" height="34" id="Twitter" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACEAAAAiCAMAAADmrkDzAAAAAXNSR0IB2cksfwAAAKJQTFRFAAAAZW2IZW2JZW2JZW2JZW2JZW2JZGyJZW2JZW2JZGyIZWyHYmyHZGyDZGyJZW2JZGyIX2aDZGyIZW2JZG2IY2yIZG2HZW2JZW2JZGyIYWGGZGyIZG2IZW2JZW2JZGyJZW2JZW2IZW2JZW2JZW2JZW2JZW2JZW2JZW2JZW2JZW2JZW2JZW2JZW2JZW2JZW2JZW2JZW2JZW2JZW2JZW2JZW2J25q7ewAAADZ0Uk5TABdmpNHv/zeo67iGUyECk54jLNDoWlk88KMVK17Nji6dCv0gMN+PYFmAEK+WQMafv+dw/FDPwuh/3gAAATxJREFUeJyVlNmagjAMhY8LUTYFBQT3BUHQkVFn3v/VBmpZhQ8mF5S0P016mgD8w3r9wVAgEoaDfq9ufTQmUZIVVVVkSaTxqLo+mZKm566u0XRSAmZzwyx/YhnzWcFd2M6yuuvSsReZs7LXdZmt7VX6unHqAMDZ8Jet8RGCBzK2bNyRVQ8AJu2SYa81AYC2jx+HI9fh5LLBPRN5vvee048H4CJyPhASJIx1j+3KJ8ULcJNSgoQgxBcDyOeT0g24y9xJ1oQoYsB3moh8Bx4Kd56UWxoEygN4qdzxC8QzJdRXgUCUE26RyKLgJwOyNFiULFOEvx9bsEyz08bItXxUftpcseC9h1AAmGK56lEi59k7FQCmevvNxbdvNgHW+/bbK6hDFXao5PZuYB1VKVaz3FEduhLtnZ1Y29+h0f4AXYIZL0FDKL0AAAAASUVORK5CYII="/>
-                            </defs>
-                            <style>
-                                tspan { white-space:pre }
-                            </style>
-                            <use id="Twitter" href="#Twitter" x="0" y="-1" />
-                        </svg>
+                        <span class="visually-hidden">Twitter</span>  
                     </a>
                 </li>
-                <li>
+                <li class="social-button ico-linkedin">
                     <a href="#">
-                        <span class="visually-hidden">LinkedIn</span>
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
-                            <defs>
-                                <image width="33" height="34" id="LinkedIn" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACEAAAAiCAMAAADmrkDzAAAAAXNSR0IB2cksfwAAAJNQTFRFAAAAZW2IZW2JZW2JZW2JZW2JZW2JZGyJZW2JZW2JZGyIZWyHYmyHZGyDZGyJZW2JZGyIX2aDZGyIZW2JZG2IY2yIZG2HZW2JZW2JZGyIYWGGZGyIZG2IZW2JZW2JZGyJZW2JZW2JZW2JZW2JZW2IZW2JZW2JZW2JZW2JZW2JZW2JZW2JZW2JZW2JZW2JZW2JZW2JfJUvSwAAADF0Uk5TABdmpNHv/zeo67iGUyECk54jLNDoWlk88KMVK17Nji6dz98QCv1AWZbGgI/n/J9QIPPMMyMAAAEjSURBVHiclZTpuoIgEIa/FqfcSktN2zunbD+n+7+6QHEB6dHmB8zAKwOzCHwhvf5gaBAZw0G/p9sfjcm0bMd1HdsyaTxS9ydT8vzK9D2aTiRgNg9C+ZMomM9q5iJOluqpyyRelMYqXututo5XhbpJdACQbISyDRouhKNgm807ivQAENKOT3svNw/086si3p4Nx5OIAxGlKuGfjsDZRHGG0TgD5hm4WIXVOIGJdQGuNiovKdHtzpR7QdhX4OHIBMsuk5tYdB7A05UJMv54CYhF96khUvyzsUaoXtjeqyK4F/WmlKu1m5av1RL8tWXEtASPmBR1lciiXmZOR2SZY9lXSrSSKM9+ewV1qMIOldzeDVlHKcUayh3VoSvR3tlc2v4OH+UNgpQXZaY+H3oAAAAASUVORK5CYII="/>
-                            </defs>
-                            <style>
-                                tspan { white-space:pre }
-                            </style>
-                            <use id="LinkedIn" href="#LinkedIn" x="0" y="-1" />
-                        </svg>
+                        <span class="visually-hidden">LinkedIn</span> 
                     </a>
                 </li>
             </ul>
         </div>
     </footer>     
 </div>
-<section>
     <div class="modal">
         <div class="modal__message">
-            <p class="modal__p">The letter was sent</p><br>
+            <p class="modal__p modal__title">The letter was sent</p><br>
             <p class="modal__subject modal__p"></p><br>
             <p class="modal__description modal__p"></p><br>
             <button class="submit modal__button">OK</button>
         </div>  
     </div>
-</section>
 <div class="fade">
 </div>
 
